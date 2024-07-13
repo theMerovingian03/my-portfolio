@@ -3,6 +3,26 @@ import { faEnvelope, faStar, faDollarSign, faArrowDown } from '@fortawesome/free
 import { Link } from 'react-scroll';
 
 const Section1Main = () => {
+
+    const handleDownload = () => {
+        // URL to the PDF file in the public directory
+        const pdfUrl = `${process.env.PUBLIC_URL}/Rushikesh_Borade_Resume.pdf`;
+
+        // Create an anchor element
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.setAttribute('download', 'Rushikesh_Borade_Resume.pdf'); // Set the download attribute with a filename
+
+        // Append the anchor to the body
+        document.body.appendChild(link);
+
+        // Trigger the download
+        link.click();
+
+        // Remove the anchor from the body
+        document.body.removeChild(link);
+    };
+
     return (
         <section className="section1">
             <div className="two-div-wrapper1">
@@ -28,7 +48,7 @@ const Section1Main = () => {
                     <p>Full stack development with knowledge regarding the most <span
                         style={{ color: 'var(--font-color2)' }}>in-demand technologies.</span></p>
 
-                    <button className="download-button">
+                    <button className="download-button" onClick={handleDownload}>
                         <FontAwesomeIcon icon={faArrowDown} className='fa-arrow-down' />
                         <span className="download-text"> Download Resume</span>
                     </button>

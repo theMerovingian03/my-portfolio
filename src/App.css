@@ -12,6 +12,7 @@
   --background-color: rgb(32, 35, 42);
   --background-color2: rgb(22, 24, 28);
   --background-color3: rgb(21, 20, 32);
+  --background-color4: rgb(40, 45, 53);
   --font-color1: rgb(2, 223, 220);
   --font-color2: white;
   --nav-background: rgb(32, 35, 42);
@@ -227,6 +228,7 @@ h2 {
 .icon-container .fa-icon {
   color: initial; /* Set initial color for icons */
   transition: color 0.3s; /* Smooth transition for color change */
+  cursor: pointer;
 }
 
 .icon-container .react-scroll-link:hover {
@@ -234,8 +236,8 @@ h2 {
   color: var(--font-color2); /* Change to your desired hover color */
 }
 
-.fontawesome-icon .fa-icon i:hover {
-  color: var(--font-color2);
+.icon-container .fa-icon:hover {
+  flood-color: var(--font-color2);
 }
 
 /* Section 2: Skills */
@@ -362,7 +364,7 @@ h2 {
 }
 
 .project-item:hover {
-  background-color: var(--background-color3);
+  background-color: var(--background-color4);
   transition: 0.3s;
 }
 

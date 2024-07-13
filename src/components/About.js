@@ -3,7 +3,7 @@ const About = () => {
     return (
         <div className="aboutSection">
             <div className="imageContainer">
-                <img src="/rishi.png" alt="Profile" className="profileImage" />
+                <img src={`${process.env.PUBLIC_URL}/rishi.png`} alt="Profile" className="profileImage" />
 
             </div>
             <h4>About Me</h4>
@@ -19,8 +19,8 @@ const About = () => {
             </p>
             <h4>Skills and Expertise</h4>
             <ul>
-                <li>Programming Languages: JavaScript, Python, C++</li>
-                <li>Frameworks: React, Node.js, Django</li>
+                <li>Programming Languages: Python, JavaScript</li>
+                <li>Frameworks: Django, React, Node.js, </li>
                 <li>Tools: Google Cloud Platform, Postman</li>
             </ul>
             <h4>Interests and Hobbies</h4>
