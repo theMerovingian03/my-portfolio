@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import BASE_URL from '../config'; // Replace with your actual backend URL
+import BASE_URL from '../config';
+import Message from './Message';
 
 const Section4Projects = () => {
     const [projects, setProjects] = useState([]);
@@ -24,15 +25,15 @@ const Section4Projects = () => {
     }, []);
 
     if (loading) {
-        return <p>Fetching data from backend...</p>;
+        return <Message type="loading" />;
     }
 
     if (error) {
-        return <p>{error}</p>;
+        return <Message type="error" message={error} />;
     }
 
     if (projects.length === 0) {
-        return <p>No projects found.</p>;
+        return <Message type="no-data" />;
     }
 
     return (

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import BASE_URL from '../config';
+import Message from './Message';
+
 
 const Section2Skills = () => {
     const [skills, setSkills] = useState([]);
@@ -24,15 +26,15 @@ const Section2Skills = () => {
     }, []);
 
     if (loading) {
-        return <p>Fetching data from backend...</p>;
+        return <Message type="loading" />;
     }
 
     if (error) {
-        return <p>{error}</p>;
+        return <Message type="error" message={error} />;
     }
 
     if (skills.length === 0) {
-        return <p>No skills found.</p>;
+        return <Message type="no-data" />;
     }
 
     return (
